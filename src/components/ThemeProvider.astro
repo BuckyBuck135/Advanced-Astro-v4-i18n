@@ -1,7 +1,9 @@
 ---
+// Adapted from Starlight's Theme Provider: https://github.com/withastro/starlight/blob/main/packages/starlight/components/ThemeProvider.astro
 import { Icon } from "astro-icon/components";
 ---
 
+{/* This is intentionally inlined to avoid FOUC. */}
 <script is:inline>
 	window.StarlightThemeProvider = (() => {
 		const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('cs-theme');
