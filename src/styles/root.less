@@ -10,11 +10,14 @@
   :root {
     --primary: hsl(80, 90%, 55%);
     --primaryLight: hsl(80, 60%, 40%);
-    --secondary: #001f3f;
-    --secondaryLight: #001f3f;
     --headerColor: #1a1a1a;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
+
+    /* dark mode colors */
+    --dark: hsl(163, 96%, 5%);
+    --medium: hsl(163, 95%, 8%);
+    --accent: #334756;
 
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -33,7 +36,7 @@
     line-height: 1.2em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--secondary);
+    color: var(--primaryLight);
     display: block;
   }
 
@@ -98,6 +101,34 @@
       transition: width 0.3s;
     }
   }
+}
+
+/* Dark mode general styles */
+@media only screen and (min-width: 0em) {
+  body.dark-mode {
+    background-color: var(--dark);
+
+    /* Fallback text color */
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #fff;
+    }
+
+    .cs-topper {
+      color: var(--primaryLight);
+    }
+
+    .cs-reviewer {
+      color: var(--bodyTextColorWhite);
+    }
+  }
+
 }
 
 /* Fonts and general styles */
